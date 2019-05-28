@@ -18,7 +18,12 @@ namespace Ex3AP
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+               name: "MainDisplay",
+               url: "{controller}/{action}/{ip}/{port}",
+               defaults: new { controller = "Home", action = "MainDisplay" }
+           );
         }
     }
 }
-//hiiii
