@@ -2,12 +2,22 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/script/modernizr-2.6.2.js"></script>
+    <script src="~/script/jquery-1.10.2.js"></script>
+    <script src="~/script/modernizr-2.6.2.js"></script>
+
+
 </head>
 <body>
     <div>
         @RenderBody()
+        <script src="~/script/jquery-1.10.2.js"></script>
+        <script src="~/script/bootstrap.min.js"></script>
     </div>
 </body>
 </html>

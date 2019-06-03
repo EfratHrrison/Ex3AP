@@ -13,17 +13,29 @@ namespace Ex3AP
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+            routes.MapRoute("chooseDisplay", "display/{str}/{num}",
+          defaults: new { controller = "Home", action = "chooseDisplay" }
+         );
+
 
             routes.MapRoute(
-               name: "MainDisplay",
-               url: "{controller}/{action}/{ip}/{port}",
-               defaults: new { controller = "Home", action = "MainDisplay" }
-           );
+            name: "DisplayPath",
+            url: "display/{ip}/{port}/{time}",
+            defaults: new { controller = "Home", action = "DisplayPath"}
+        );
+
+                 routes.MapRoute(
+            name: "savePath",
+            url: "save/{ip}/{port}/{time}/{totalTime}/{fileName}",
+            defaults: new { controller = "Home", action = "savePath" }
+        );
+
+            routes.MapRoute(
+              name: "Default",
+              url: "{controller}/{action}/{id}",
+              defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+          );
+
         }
     }
 }

@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "DisplayPath";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body background="~/export-map-share.png" style="background-size:100% 100%; background-attachment:fixed">
+</body>
+
+<div>
+    <table>
+        <tr>
+            <td>lat:  </td>
+            <td><p type="text" id="latVal" size="50"></p></td>
+        </tr>
+        <tr>
+            <td>lon:  </td>
+            <td><p type="text" id="lonVal" size="50"></p></td>
+        </tr>
+      
+    </table>
+</div>
+
+
+<canvas id="myCanvas"
+        style="border:1px;"></canvas>
+<script>
+  
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.hight = window.innerHeight;
+    function setLon(lon) {
+        if (lon < 0)
+            return (lon + 180) * (canvas.width / 360);
+    }
+
+    function setLat(lat) {
+        return (lat + 90) * (canvas.height / 180);
+    }
+
+
+    var IntervalTime = @Session["time"] * 1000
+    myTimer = (function () {
+        $.post( "@Url.Action("GetVal")").done(function (xml) {
+                var xmlDoc = $.parseXML( xml ),
+                $xml = $( xmlDoc ),
+                lon = $xml.find("Lon").text();
+                lon = setLon(parseFloat(lon));
+                lat = $xml.find("Lat").text();
+                lat = setLat(parseFloat(lat));
+
+                $("#latVal").text(lat);
+                $("#lonVal").text(lon);
+
+
+            if ((typeof myTimer.prevLon == 'undefined') || (typeof myTimer.prevLat == 'undefined')) {
+                ctx.beginPath();
+                ctx.fillStyle = "red";
+                ctx.arc(lon, lat, 5, 0, 2 * Math.PI);
+                ctx.stroke();
+                ctx.fill();
+            } else {
+                ctx.beginPath();
+                ctx.moveTo(myTimer.prevLon, myTimer.prevLat);
+                ctx.lineTo(lon, lat);
+                ctx.strokeStyle = "red";
+                ctx.stroke();
+            }
+            myTimer.prevLon = lon;
+            myTimer.prevLat = lat;
+        });
+    });
+
+    setInterval(myTimer, IntervalTime);
+    myTimer();
+
+</script>

@@ -88,8 +88,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="content\bootstrap.css" />
+    <Content Include="content\bootstrap.min.css" />
+    <Content Include="content\Site.css" />
     <Content Include="export-map-share.png" />
     <Content Include="Global.asax" />
+    <Content Include="script\ai.0.22.19-build00125.js" />
+    <Content Include="script\ai.0.22.19-build00125.min.js" />
+    <Content Include="script\bootstrap.js" />
+    <Content Include="script\bootstrap.min.js" />
+    <None Include="script\jquery-1.10.2-vsdoc.js" />
+    <None Include="script\jquery-1.10.2.intellisense.js" />
+    <Content Include="script\jquery-1.10.2.js" />
+    <Content Include="script\jquery-1.10.2.min.js" />
+    <None Include="script\jquery-3.0.0.intellisense.js" />
+    <Content Include="script\jquery-3.0.0.js" />
+    <Content Include="script\jquery-3.0.0.min.js" />
+    <Content Include="script\jquery-3.0.0.slim.js" />
+    <Content Include="script\jquery-3.0.0.slim.min.js" />
+    <Content Include="script\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +126,12 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\MainDisplay.cshtml" />
+    <Content Include="Views\Home\DisplayPath.cshtml" />
+    <Content Include="script\jquery-1.10.2.min.map" />
+    <Content Include="script\jquery-3.0.0.min.map" />
+    <Content Include="script\jquery-3.0.0.slim.min.map" />
+    <Content Include="Views\Home\savePath.cshtml" />
+    <Content Include="Views\Home\loadPath.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
