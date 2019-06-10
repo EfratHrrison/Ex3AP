@@ -1,0 +1,29 @@
+commit e835e80ee1638148485df3b5657b315c1987f519
+Author: Efrat Gita Harrison <efratgita.harrison@live.biu.ac.il>
+Date:   Mon Jun 3 20:18:19 2019 +0300
+
+    done
+
+commit dcdd7ef7f07d61336753645eb8dc372be7fca5a2
+Author: Efrat Gita Harrison <efratgita.harrison@live.biu.ac.il>
+Date:   Tue May 28 15:22:33 2019 +0300
+
+    hiiii
+
+commit 461dc4e20ad098a0f0929cf66291a2c3efc4fc77
+Author: Efrat Gita Harrison <efratgita.harrison@live.biu.ac.il>
+Date:   Thu May 23 12:20:48 2019 +0300
+
+    check
+
+commit 3fa4426f5219fa5089a3a6a29e19b271e0602502
+Author: Efrat Gita Harrison <efratgita.harrison@live.biu.ac.il>
+Date:   Thu May 23 12:09:02 2019 +0300
+
+    Add project files.
+
+commit 01371683ecee2646db92b7ec4911c9ef746b6878
+Author: Efrat Gita Harrison <efratgita.harrison@live.biu.ac.il>
+Date:   Thu May 23 12:08:59 2019 +0300
+
+    Add .gitignore and .gitattributes.

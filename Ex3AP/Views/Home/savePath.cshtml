@@ -7,20 +7,6 @@
 <body background="~/export-map-share.png" style="background-size:100% 100%; background-attachment:fixed">
 </body>
 
-<div>
-    <table>
-        <tr>
-            <td>lat:  </td>
-            <td><p type="text" id="latVal" size="50"></p></td>
-        </tr>
-        <tr>
-            <td>lon:  </td>
-            <td><p type="text" id="lonVal" size="50"></p></td>
-        </tr>
-
-    </table>
-</div>
-
 
 <canvas id="myCanvas"
         style="border:1px;"></canvas>
@@ -53,9 +39,7 @@
             lat = $xml.find("Lat").text();
             lat = setLat(parseFloat(lat));
 
-                $("#latVal").text(lat);
-                $("#lonVal").text(lon);
-
+              
 
             if ((typeof myTimer.prevLon == 'undefined') || (typeof myTimer.prevLat == 'undefined')) {
                 ctx.beginPath();
@@ -77,7 +61,7 @@
 
     timeOut = (function () {
         clearInterval(MyInterval)
-        alert("Flight route saved!");
+        //alert("Flight route saved!");
     });
     setTimeout(timeOut, IntervalTotalTime);
 

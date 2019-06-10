@@ -23,7 +23,6 @@ namespace Ex3AP.Models
         private NetworkStream _ns;
         private StreamReader Reader;
         public Boolean isConnect;
-        public Boolean FileExists;
         public System.IO.StreamWriter file;
        
         public string Ip
@@ -105,7 +104,6 @@ namespace Ex3AP.Models
         public Info()
         {
             isConnect = false;
-            FileExists = false;
         }
 
         //connect to the simulator as a client 
@@ -139,12 +137,9 @@ namespace Ex3AP.Models
             _ns.Write(bytes, 0, bytes.Length);
             string StrLat = Reader.ReadLine().Split('=')[1].Split(' ')[1].Split('\'')[1];
             Random r = new Random();
-            Lon = double.Parse(StrLon) + r.Next(50);
-            Lat = double.Parse(StrLat) + r.Next(50);
-            
-            //close the socket 
-            //_ns.Close();
-            //_client.Close();
+            Lon = double.Parse(StrLon);
+            Lat = double.Parse(StrLat);
+
         }
 
         public void ToXml(XmlWriter writer)
@@ -161,10 +156,10 @@ namespace Ex3AP.Models
         public void writeToFile()
         {
             string path = HttpContext.Current.Server.MapPath(String.Format(SCENARIO_FILE, fileName));
-            if (!FileExists)
-            {
-                IsFileExists(path);
-            }
+            //if (!FileExists)
+            //{
+            //    IsFileExists(path);
+            //}
             listen();
             using (file = new System.IO.StreamWriter(path, true))
             {
@@ -175,16 +170,16 @@ namespace Ex3AP.Models
             }
         }
 
-        public void IsFileExists(string path)
-        {
-            if (File.Exists(path))
-            {
-                File.Delete(path);
-                FileExists = true;
+        //public void IsFileExists(string path)
+        //{
+        //    if (File.Exists(path))
+        //    {
+        //        File.Delete(path);
+        //        FileExists = true;
 
-            }
-            return;
-        }
+        //    }
+        //    return;
+        //}
 
         public void loadFile()
         {
